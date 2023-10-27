@@ -49,4 +49,10 @@ public class DriverManager {
         return driver;
     }
 
+    public void tearDown(){
+        driver.close();
+        driver.quit();
+        driver = null;
+    }
+
 }
