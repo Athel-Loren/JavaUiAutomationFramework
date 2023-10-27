@@ -2,8 +2,8 @@ package com.opencart.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 
-public class HomePage extends Page{
-    public HomePage(WebDriver driver){
+public class AccountCreatedPage extends Page{
+    public AccountCreatedPage(WebDriver driver) {
         super(driver);
     }
 }
