@@ -1,5 +1,6 @@
 package com.opencart.pageobjects;
 
+import com.opencart.managers.ScrollManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,6 +20,10 @@ public abstract class Page {
 
     @FindBy(xpath = "//a[@class='dropdown-item'][normalize-space()='Login']")
     protected WebElement loginBtn;
+
+
+
+
     public void navigateToRegisterPageFromHeader(){
         myAccountIcon.click();
         registerBtn.click();
@@ -28,4 +33,8 @@ public abstract class Page {
         myAccountIcon.click();
         loginBtn.click();
     }
+
+
+
+
 }
