@@ -3,7 +3,7 @@ package com.opencart;
 import com.opencart.managers.DriverManager;
 import com.opencart.managers.RandomDataManager;
 import com.opencart.pageobjects.HomePage;
-import com.opencart.pageobjects.LoginPage;
+import com.opencart.pageobjects.AccountCreatedPage;
 import com.opencart.pageobjects.RegisterPage;
 import org.openqa.selenium.*;
 
@@ -17,6 +17,7 @@ public class TestRunnerWithPageObjects {
 
         RegisterPage registerPage = new RegisterPage(driver);// creat obj
 
+
         //randome date
         String randomEmail = RandomDataManager.generateRandomEmail();
         System.out.println(randomEmail);
@@ -27,16 +28,10 @@ public class TestRunnerWithPageObjects {
 
         registerPage.clickTheContinueButton();
 
-
+        AccountCreatedPage logout = new AccountCreatedPage(driver);
+        logout.navigateToLogoutPageFromHeader();
 
         //need to implement logout method from class Page
-
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.fillInTheLoginForm(randomEmail, password);
-        loginPage.clickLoginBtn();
-
-
-
 
 
         DriverManager.getInstance().tearDown();
