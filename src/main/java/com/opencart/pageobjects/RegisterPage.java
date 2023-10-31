@@ -24,7 +24,7 @@ public class RegisterPage extends Page{
     @FindBy(xpath = "//input[@name='agree']")
     private WebElement privacyToggle;
 
-    @FindBy(xpath = "//button[normalize-space()='Continue']")
+    @FindBy(xpath = "//button[normalize-space()='Continue'] | //*[@id=\"content\"]/div/a")
     //@FindBy(css = "button[type='submit']")
     //@FindBy(className = "btn btn-primary")
     private WebElement continueBtn;

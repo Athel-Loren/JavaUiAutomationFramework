@@ -10,9 +10,11 @@ public class GenericSteps {
     WebDriver driver = DriverManager.getInstance().getDriver();
     @Then("the current Url contains {string} keyword")
     public void theCurrentUrlContainsKeyword(String keyWordFromTheUrl) throws InterruptedException {
-        Thread.sleep(1500);
         String currentUrl = driver.getCurrentUrl();
         boolean currentUrlContainsKeyword = currentUrl.contains(keyWordFromTheUrl);
+        System.out.println("######## " +currentUrl);
+        System.out.println("******** " +keyWordFromTheUrl);
+        Thread.sleep(1000);
 
         Assertions.assertTrue(currentUrlContainsKeyword,"The KeyWord: " + keyWordFromTheUrl+ " is present in " + currentUrl);
     }
