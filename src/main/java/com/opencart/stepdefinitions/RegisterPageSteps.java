@@ -12,20 +12,28 @@ public class RegisterPageSteps {
     RegisterPage registerPage = new RegisterPage(driver);
 
     @When("the register form is populated with valid random data")
-    public void theRegisterFormIsPopulatedWithValidRandomData() {
+    public void theRegisterFormIsPopulatedWithValidRandomData() throws InterruptedException {
         String randomEmail = RandomDataManager.generateRandomEmail();
         String password = RandomDataManager.generatePassword();
 
         System.out.println(randomEmail);
         System.out.println(password);
 
-        registerPage.fillInTheRegisterForm(RandomDataManager.generateFirstName(), RandomDataManager.generateLastName(), randomEmail, password, true);
-        registerPage.clickTheContinueButton();
+        registerPage.fillInTheRegisterForm(
+                RandomDataManager.generateFirstName(),
+                RandomDataManager.generateLastName(),
+                randomEmail,
+                password,
+                true);
+
+       // registerPage.fillInTheRegisterForm("dsgasdfcas","sdfsdfsvsdv","ahdfashg@gmail.com","afssdvsfd",true);
+        Thread.sleep(1000);
         System.out.println("The Register Form is populated with valid random data");
     }
 
     @And("Continue button is clicked")
     public void continueButtonIsClicked() throws InterruptedException {
+        Thread.sleep(1000);
         registerPage.clickTheContinueButton();
         Thread.sleep(1000);
         System.out.println("The continue button has been clicked");

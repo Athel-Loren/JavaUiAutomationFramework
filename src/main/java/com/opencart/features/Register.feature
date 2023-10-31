@@ -9,6 +9,8 @@ Feature: Register Flow Test Suite
     Given "/index.php?route=account/register&language=en-gb" endpoint is accessed
     When the register form is populated with valid random data
     And Continue button is clicked
+    When the register form is populated with valid random data
+    And Continue button is clicked
     Then the current Url contains "route=account/success" keyword
 
   Scenario: User remains on registerPage when the continue button is not Clicked
