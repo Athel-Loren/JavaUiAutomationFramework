@@ -25,6 +25,8 @@ public class RegisterPage extends Page{
     private WebElement privacyToggle;
 
     @FindBy(xpath = "//button[normalize-space()='Continue']")
+    //@FindBy(css = "button[type='submit']")
+    //@FindBy(className = "btn btn-primary")
     private WebElement continueBtn;
 
     public void fillInTheRegisterForm(String firstName, String lastName, String email, String password, boolean toggle){
