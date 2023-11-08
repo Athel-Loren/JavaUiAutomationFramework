@@ -10,13 +10,13 @@ public class LoginPage extends Page{
         super(driver);
     }
 
-    @FindBy(xpath = "")
+    @FindBy(id = "input-email")
     private WebElement usernameInput;
 
-    @FindBy(xpath = "")
+    @FindBy(id = "input-password")
     private WebElement passwordInput;
 
-    @FindBy(xpath = "")
+    @FindBy(css = "button[type='submit']")
     private WebElement loginBtn;
 
 
